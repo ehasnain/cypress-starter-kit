@@ -1,0 +1,30 @@
+version: '3'
+
+volumes:
+    nodemodules:
+    dist:
+    cache:
+
+services:
+  test-ci:
+    image: cypress-kit
+    build:
+        context: .
+        args:
+            NODE_VERSION: 14.7.0
+            CHROME_VERSION: 84.0.4147.105
+    container_name: cypress-test
+    environment:
+      - CYPRESS_baseUrl=https://example.cypress.io/
+    working_dir: /app
+    volumes:
+      - ./cypress:/app/cypress
+      - ./cypress.json:/app/cypress.json
+      - ./package.json:/app/package.json
+      - ./yarn.lock:/app/yarn.lock
+      - ./scripts:/app/scripts
+      - ./test-result:/app/test-result
+      - nodemodules:/app/node_modules
+      - dist:/app/dist
+      - cache:/root/.cache/
+    command: ["sh", "-c", "yarn && yarn test"]
