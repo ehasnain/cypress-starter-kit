@@ -1,9 +1,4 @@
 {
     "baseUrl": "https://example.cypress.io/",
-    "reporter": "junit",
-    "reporterOptions": {
-        "mochaFile": "test-result/results-[hash].xml",
-        "toConsole": true
-    },
     "video": false
 }

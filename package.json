@@ -7,13 +7,15 @@
     "license": "MIT",
     "scripts": {
         "test": "./scripts/test.sh",
-        "delete:reports": "rm cypress/results/* || true",
-        "combine:reports": "jrm cypress/test-result/combined-results.xml \"cypress/test-result/*.xml\"",
+        "delete:reports": "rm test-result/* || true",
+        "combine:reports": "jrm test-result/combined-results.xml \"test-result/*.xml\"",
         "pretest": "yarn delete:reports",
         "posttest": "yarn combine:reports"
     },
     "dependencies": {
         "cypress": "^7.6.0",
-        "junit-report-merger": "^2.2.2"
+        "cypress-multi-reporters": "^1.5.0",
+        "junit-report-merger": "^2.2.2",
+        "mocha-junit-reporter": "^2.0.0"
     }
 }
