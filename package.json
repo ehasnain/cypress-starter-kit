@@ -1,0 +1,8 @@
+{
+    "name": "cypress-starter-kit",
+    "version": "1.0.0",
+    "description": "A starter kit for Cypress Testing with docker",
+    "repository": "https://github.com/ehasnain/cypress-starter-kit",
+    "author": "Ehtesham Hasnain <33456936+ehasnain@users.noreply.github.com>",
+    "license": "MIT"
+}
