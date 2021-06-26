@@ -4,5 +4,16 @@
     "description": "A starter kit for Cypress Testing with docker",
     "repository": "https://github.com/ehasnain/cypress-starter-kit",
     "author": "Ehtesham Hasnain <33456936+ehasnain@users.noreply.github.com>",
-    "license": "MIT"
+    "license": "MIT",
+    "scripts": {
+        "test": "./scripts/test.sh",
+        "delete:reports": "rm cypress/results/* || true",
+        "combine:reports": "jrm cypress/test-result/combined-results.xml \"cypress/test-result/*.xml\"",
+        "pretest": "yarn delete:reports",
+        "posttest": "yarn combine:reports"
+    },
+    "dependencies": {
+        "cypress": "^7.6.0",
+        "junit-report-merger": "^2.2.2"
+    }
 }
