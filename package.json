@@ -11,10 +11,11 @@
         "combine-reports": "./scripts/combine-reports.sh",
         "pretest": "yarn clean-reports"
     },
-    "dependencies": {
+    "devDependencies": {
         "cypress": "^7.6.0",
         "cypress-multi-reporters": "^1.5.0",
         "junit-report-merger": "^2.2.2",
-        "mocha-junit-reporter": "^2.0.0"
+        "mocha-junit-reporter": "^2.0.0",
+        "typescript": "^4.3.4"
     }
 }
