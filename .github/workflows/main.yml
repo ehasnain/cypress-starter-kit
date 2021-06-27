@@ -24,4 +24,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build docker image
-        run: make build
+        run: docker-compose build test-ci
