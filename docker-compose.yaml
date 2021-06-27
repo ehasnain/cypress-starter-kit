@@ -21,5 +21,4 @@ services:
     volumes:
       - .:/app
       - nodemodules:/app/node_modules
-      - cache:/root/.cache/
     command: ["sh", "-c", "yarn && yarn test-ci"]
