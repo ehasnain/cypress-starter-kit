@@ -9,45 +9,21 @@ on:
   workflow_dispatch:
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Build docker image
-        run: |
-          docker build -t cypress-kit:$GITHUB_SHA
-          mkdir -p docker-images
-          docker save cypress-kit:$GITHUB_SHA > docker-images/cypress-kit.tar
-
-      - name: Cache Docker image
-        uses: actions/upload-artifact@v2
-        with:
-          name: docker-artifact
-          path: docker-images
-          retention-days: 1
-
+        run: docker-compose build test-ci
   test-ci:
     needs: build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Retrieve cached Docker image from build
-        uses: actions/download-artifact@v2
-        with:
-          name: docker-artifact
-          path: docker-images
-
-      - name: Load Docker image cache
-        run: docker load < docker-images/cypress-kit.tar
-
       - name: Run example tests
         run: make test-ci
-
       - name: Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
