@@ -7,7 +7,7 @@ volumes:
 
 services:
   test-ci:
-    image: cypress-kit
+    image: cypress-kit:latest
     build:
         context: .
         args:
