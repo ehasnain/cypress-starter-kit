@@ -7,8 +7,8 @@
     "license": "MIT",
     "scripts": {
         "test": "./scripts/test.sh",
-        "clean-reports": "./scripts/clean-reports.sh",
-        "combine-reports": "./scripts/combine-reports.sh",
+        "clean-reports": "./scripts/clean-results.sh",
+        "combine-reports": "./scripts/combine-results.sh",
         "pretest": "yarn clean-reports"
     },
     "devDependencies": {

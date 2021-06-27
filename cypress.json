@@ -1,4 +1,9 @@
 {
     "baseUrl": "https://example.cypress.io/",
-    "video": false
+    "fixturesFolder": "src/fixtures",
+    "integrationFolder": "src/tests",
+    "pluginsFile": "src/plugins/index.js",
+    "supportFile": "src/support/index.js",
+    "screenshotsFolder": "test-results/screenshots",
+    "videosFolder": "test-results/videos"
 }
