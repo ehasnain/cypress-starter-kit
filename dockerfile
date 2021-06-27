@@ -1,4 +1,4 @@
-# This file is a slightly modified version of the example dockerfiles from cypress-docker-images repository
+# This file is a custom modified version of the example dockerfiles from cypress-docker-images repository
 # See here: https://github.com/cypress-io/cypress-docker-images
 
 ARG NODE_VERSION
