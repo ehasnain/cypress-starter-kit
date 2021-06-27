@@ -6,9 +6,6 @@ FROM cypress/base:${NODE_VERSION}
 
 USER root
 
-RUN node --version
-RUN echo "force new chrome here!"
-
 # Chrome dependencies
 RUN apt-get update
 RUN apt-get install -y fonts-liberation libappindicator3-1 xdg-utils
@@ -25,21 +22,11 @@ RUN google-chrome --version
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
-# Add zip utility - it comes in very handy
-RUN apt-get update && apt-get install -y zip
-
-# a few environment variables to make NPM installs easier
 # good colors for most applications
 ENV TERM xterm
 
-# should be root user
-RUN echo "whoami: $(whoami)"
+# set user to root
 RUN npm config -g set user $(whoami)
-
-# command "id" should print:
-# uid=0(root) gid=0(root) groups=0(root)
-# which means the current user is root
-RUN id
 
 # point Cypress at the /root/cache no matter what user account is used
 # see https://on.cypress.io/caching
@@ -47,14 +34,5 @@ ENV CYPRESS_CACHE_FOLDER=/root/.cache/Cypress
 RUN npm install -g "cypress@7.6.0"
 RUN cypress verify
 
-# Cypress cache and installed version
-# should be in the root user's home folder
-RUN cypress cache path
-RUN cypress cache list
-RUN cypress info
-RUN cypress version
-
 # give every user read access to the "/root" folder where the binary is cached
-# we really only need to worry about the top folder, fortunately
-RUN ls -la /root
 RUN chmod 755 /root
