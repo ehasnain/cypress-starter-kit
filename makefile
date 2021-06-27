@@ -4,8 +4,11 @@ help:		## Show this help.
 build:		## Build Docker image for cypress testing
 	@./scripts/build.sh
 
-test:		## Run tests on local machine without docker
-	@./scripts/test.sh
+test:		## Run tests once on local machine without docker
+	@yarn test-local
+
+test-watch:	## Start cypress tests in watch mode
+	@yarn test-watch
 
 test-ci:	## Run tests on a CI Environment (e.g. Jenkins, etc.) in a docker container
 	@docker-compose up --build test-ci && docker-compose rm -fsv test-ci

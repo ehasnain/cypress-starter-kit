@@ -8,9 +8,11 @@
     "scripts": {
         "test": "./scripts/test.sh",
         "test-ci": "./scripts/test-ci.sh",
-        "clean-reports": "./scripts/clean-results.sh",
-        "combine-reports": "./scripts/combine-results.sh",
-        "pretest": "yarn clean-reports"
+        "test-local": "./scripts/test-local.sh",
+        "test-watch": "./scripts/test-watch.sh",
+        "clean-results": "./scripts/clean-results.sh",
+        "combine-junit-results": "./scripts/combine-junit-results.sh",
+        "pretest": "yarn clean-results"
     },
     "devDependencies": {
         "@types/node": "^15.12.5",
