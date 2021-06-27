@@ -17,8 +17,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker-compose build test-ci
-          docker tag cypress-kit:latest cypress-kit:$GITHUB_SHA
+          docker build -t cypress-kit:$GITHUB_SHA
           mkdir -p docker-images
           docker save cypress-kit:$GITHUB_SHA > docker-images/cypress-kit.tar
 
