@@ -2,7 +2,7 @@
 
 DIR="$(cd "$(dirname $0)" >/dev/null && pwd)"
 
-$(yarn bin)/cypress run --browser chrome
+$(yarn bin)/cypress run $@
 
 # cache exit code for file exit
 EXIT_CODE=$?

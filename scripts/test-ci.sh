@@ -2,6 +2,4 @@
 
 DIR="$(cd "$(dirname $0)" >/dev/null && pwd)"
 
-SERVICE="test-ci"
-
-docker-compose up --build $SERVICE && docker-compose rm -fsv $SERVICE
+$DIR/test.sh --headless --browser chrome

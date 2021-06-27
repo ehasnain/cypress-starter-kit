@@ -7,5 +7,5 @@ build:		## Build Docker image for cypress testing
 test:		## Run tests on local machine without docker
 	@./scripts/test.sh
 
-test-ci:	## Run tests on a CI Environment (e.g. Jenkins, etc.)
-	@./scripts/test-ci.sh
+test-ci:	## Run tests on a CI Environment (e.g. Jenkins, etc.) in a docker container
+	@docker-compose up --build test-ci && docker-compose rm -fsv test-ci
