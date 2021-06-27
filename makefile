@@ -1,10 +1,11 @@
-PLATFORM ?= local
+help:		## Show this help.
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
-build:
+build:		## Build Docker image for cypress testing
 	@./scripts/build.sh
 
-test:
+test:		## Run tests on local machine without docker
 	@./scripts/test.sh
 
-test-ci:
+test-ci:	## Run tests on a CI Environment (e.g. Jenkins, etc.)
 	@docker-compose up --build test-ci
