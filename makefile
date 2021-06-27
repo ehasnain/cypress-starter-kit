@@ -8,4 +8,4 @@ test:		## Run tests on local machine without docker
 	@./scripts/test.sh
 
 test-ci:	## Run tests on a CI Environment (e.g. Jenkins, etc.)
-	@docker-compose up --build test-ci
+	@./scripts/test-ci.sh

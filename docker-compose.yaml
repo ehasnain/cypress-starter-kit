@@ -16,6 +16,7 @@ services:
     container_name: cypress-test
     environment:
       - CYPRESS_baseUrl=https://example.cypress.io/
+      - CYPRESS_video=false
     working_dir: /app
     volumes:
       - .:/app
