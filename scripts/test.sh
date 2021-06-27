@@ -1,5 +1,3 @@
 #!/bin/sh
 
-set e+x
-
-$(yarn bin)/cypress run
+$(yarn bin)/cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json

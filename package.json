@@ -7,10 +7,9 @@
     "license": "MIT",
     "scripts": {
         "test": "./scripts/test.sh",
-        "delete:reports": "rm test-result/* || true",
-        "combine:reports": "jrm test-result/combined-results.xml \"test-result/*.xml\"",
-        "pretest": "yarn delete:reports",
-        "posttest": "yarn combine:reports"
+        "clean-reports": "./scripts/clean-reports.sh",
+        "combine-reports": "./scripts/combine-reports.sh",
+        "pretest": "yarn clean-reports"
     },
     "dependencies": {
         "cypress": "^7.6.0",
