@@ -23,3 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// in cypress/support/index.ts
+// load type definitions that come with Cypress module
+/// <reference types="cypress" />
+
+declare namespace Cypress {
+    interface Chainable {
+        /**
+         * Custom command to get current time (js -> new Date())
+         * @example cy.time()
+         * @example cy.time(2021, 06, 27)
+         */
+        time(value?: string | number | Date): Chainable<Element>
+    }
+}
+
+// cypress/support/index.ts
+Cypress.Commands.add('time', (value) => {
+    const now = value ? new Date(value) : new Date();
+    return cy.clock(now);
+});

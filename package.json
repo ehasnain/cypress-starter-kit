@@ -13,6 +13,7 @@
         "pretest": "yarn clean-reports"
     },
     "devDependencies": {
+        "@types/node": "^15.12.5",
         "cypress": "^7.6.0",
         "cypress-multi-reporters": "^1.5.0",
         "junit-report-merger": "^2.2.2",
