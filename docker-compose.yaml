@@ -18,13 +18,7 @@ services:
       - CYPRESS_baseUrl=https://example.cypress.io/
     working_dir: /app
     volumes:
-      - ./cypress:/app/cypress
-      - ./cypress.json:/app/cypress.json
-      - ./package.json:/app/package.json
-      - ./yarn.lock:/app/yarn.lock
-      - ./scripts:/app/scripts
-      - ./test-result:/app/test-result
+      - .:/app
       - nodemodules:/app/node_modules
-      - dist:/app/dist
       - cache:/root/.cache/
     command: ["sh", "-c", "yarn && yarn test"]
