@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -15,8 +14,9 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = (on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions) => {
-    // `on` is used to hook into various events Cypress emits
-    // `config` is the resolved Cypress config
-}
+	// `on` is used to hook into various events Cypress emits
+	// `config` is the resolved Cypress config
+};
