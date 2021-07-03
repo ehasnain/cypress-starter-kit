@@ -8,7 +8,8 @@
     "scripts": {
         "clean-results": "./scripts/clean-results.sh",
         "combine-junit-results": "./scripts/combine-junit-results.sh",
-        "lint": "eslint src",
+        "fix-lint": "./scripts/lint.sh --fix",
+        "lint": "./scripts/lint.sh",
         "pretest": "yarn lint && yarn clean-results",
         "test": "./scripts/test.sh",
         "test-ci": "./scripts/test-ci.sh",
