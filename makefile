@@ -6,6 +6,9 @@ help:		## Show this help.
 build:		## Build Docker image for cypress testing
 	@./scripts/build.sh
 
+lint:		## Run linter (eslint) on the 'src' folders
+	@yarn lint
+
 test:		## Run tests once on local machine without docker
 	@yarn test-local
 

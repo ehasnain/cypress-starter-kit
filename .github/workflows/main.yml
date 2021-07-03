@@ -17,6 +17,12 @@ jobs:
       - name: Build docker image
         run: docker-compose build test-ci
 
+      - name: Install packages
+        run: yarn install
+
+      - name: Run linters
+        run: make lint
+
       - name: Run example tests
         run: make test-ci
 

@@ -20,5 +20,4 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-      - nodemodules:/app/node_modules
     command: ["sh", "-c", "yarn && yarn test-ci"]
