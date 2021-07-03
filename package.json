@@ -6,18 +6,22 @@
     "author": "Ehtesham Hasnain <33456936+ehasnain@users.noreply.github.com>",
     "license": "MIT",
     "scripts": {
+        "clean-results": "./scripts/clean-results.sh",
+        "combine-junit-results": "./scripts/combine-junit-results.sh",
+        "lint": "eslint src",
+        "pretest": "yarn lint && yarn clean-results",
         "test": "./scripts/test.sh",
         "test-ci": "./scripts/test-ci.sh",
         "test-local": "./scripts/test-local.sh",
-        "test-watch": "./scripts/test-watch.sh",
-        "clean-results": "./scripts/clean-results.sh",
-        "combine-junit-results": "./scripts/combine-junit-results.sh",
-        "pretest": "yarn clean-results"
+        "test-watch": "./scripts/test-watch.sh"
     },
     "devDependencies": {
         "@types/node": "^15.12.5",
+        "@typescript-eslint/eslint-plugin": "^4.28.1",
+        "@typescript-eslint/parser": "^4.28.1",
         "cypress": "^7.6.0",
         "cypress-multi-reporters": "^1.5.0",
+        "eslint": "^7.29.0",
         "junit-report-merger": "^2.2.2",
         "mocha-junit-reporter": "^2.0.0",
         "typescript": "^4.3.4"
