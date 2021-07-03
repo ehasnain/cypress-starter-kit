@@ -10,7 +10,7 @@
         "combine-junit-results": "./scripts/combine-junit-results.sh",
         "fix-lint": "./scripts/lint.sh --fix",
         "lint": "./scripts/lint.sh",
-        "pretest": "yarn lint && yarn clean-results",
+        "pretest": "yarn clean-results",
         "test": "./scripts/test.sh",
         "test-ci": "./scripts/test-ci.sh",
         "test-local": "./scripts/test-local.sh",
