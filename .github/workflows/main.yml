@@ -17,6 +17,9 @@ jobs:
       - name: Build docker image
         run: docker-compose build test-ci
 
+      - name: Check yarn
+        run: echo $0; pwd; yarn --version
+
       - name: Install packages
         run: yarn install
 
