@@ -18,7 +18,7 @@ jobs:
         run: docker-compose build test-ci
 
       - name: Check yarn
-        run: echo $0; pwd; yarn --version
+        run: npm install -g yarn
 
       - name: Install packages
         run: yarn install
