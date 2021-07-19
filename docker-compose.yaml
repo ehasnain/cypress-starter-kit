@@ -23,4 +23,4 @@ services:
     command:
       - "sh"
       - "-c"
-      - "yarn && rm -rf test-results && mkdir –m777 test-results && yarn test-ci"
+      - "yarn && rm -rf test-results && mkdir -m 777 test-results && yarn test-ci"
