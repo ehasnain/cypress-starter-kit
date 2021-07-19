@@ -20,4 +20,7 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    command: ["sh", "-c", "yarn && yarn test-ci"]
+    command:
+      - "sh"
+      - "-c"
+      - "yarn && rm -rf test-results && mkdir –m777 test-results && yarn test-ci"
