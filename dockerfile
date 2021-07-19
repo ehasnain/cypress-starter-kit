@@ -36,3 +36,12 @@ RUN cypress verify
 
 # give every user read access to the "/root" folder where the binary is cached
 RUN chmod 755 /root
+
+# add non-root user
+ARG USER_ID
+ARG GROUP_ID
+
+RUN addgroup --gid $GROUP_ID user
+RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+
+USER user

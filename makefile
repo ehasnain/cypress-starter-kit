@@ -1,5 +1,11 @@
 SHELL := /bin/sh
 
+CURRENT_UID := $(shell id -u)
+CURRENT_GID := $(shell id -g)
+
+export CURRENT_UID
+export CURRENT_GID
+
 help:		## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
@@ -17,3 +23,7 @@ test-watch:	## Start cypress tests in watch mode
 
 test-ci:	## Run tests on a CI Environment (e.g. Jenkins, etc.) in a docker container
 	@docker-compose up --build test-ci && docker-compose rm -fsv test-ci
+
+uid:
+	echo "${CURRENT_UID}"
+	echo "${CURRENT_GID}"

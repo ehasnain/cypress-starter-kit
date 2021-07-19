@@ -13,6 +13,8 @@ services:
         args:
             NODE_VERSION: 14.7.0
             CHROME_VERSION: 84.0.4147.105
+            USER_ID: ${CURRENT_UID}
+            GROUP_ID: ${CURRENT_GID}
     container_name: cypress-test
     environment:
       - CYPRESS_baseUrl=https://example.cypress.io/
