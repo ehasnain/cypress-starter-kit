@@ -17,9 +17,6 @@ jobs:
       - name: Build docker image
         run: docker-compose build test-ci
 
-      - name: Check yarn
-        run: npm install -g yarn
-
       - name: Install packages
         run: yarn install
 
