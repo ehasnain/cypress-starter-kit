@@ -10,18 +10,18 @@ on:
 
 jobs:
   Build-Test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Build docker image
         run: docker-compose build test-ci
 
-      # - name: Install packages
-      #   run: yarn install
+      - name: Install packages
+        run: yarn install
 
-      # - name: Run linters
-      #   run: make lint
+      - name: Run linters
+        run: make lint
 
       - name: Run example tests
         run: make test-ci
