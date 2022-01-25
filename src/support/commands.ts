@@ -35,7 +35,7 @@ declare namespace Cypress {
          * @example cy.time()
          * @example cy.time(2021, 06, 27)
          */
-        time(value?: string | number | Date): Chainable<Element>
+        time(value?: DateValue): Cypress.Chainable<Cypress.Clock>
     }
 }
 
@@ -45,4 +45,4 @@ Cypress.Commands.add('time', (value: DateValue) => {
 	return cy.clock(now);
 });
 
-type DateValue = string | number | Date;
+type DateValue = string | number | Date | undefined;

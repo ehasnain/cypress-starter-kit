@@ -1,3 +1,3 @@
 #!/bin/sh
 
-yarn test --headless --browser chrome
+yarn run test --headless --browser chrome

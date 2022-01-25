@@ -2,5 +2,5 @@
 
 DIR="$(cd "$(dirname $0)" >/dev/null && pwd)"
 
-yarn lint &&
-	yarn test --headed --browser chrome
+yarn run lint &&
+	yarn run test --headed --browser chrome

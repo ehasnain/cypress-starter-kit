@@ -2,17 +2,14 @@ version: '3'
 
 volumes:
     nodemodules:
-    dist:
-    cache:
 
 services:
   test-ci:
-    image: cypress-kit
+    image: cypress-testing
     build:
         context: .
-        args:
-            NODE_VERSION: 14.7.0
-            CHROME_VERSION: 84.0.4147.105
+        cache_from:
+          - cypress-testing:latest
     container_name: cypress-test
     environment:
       - CYPRESS_baseUrl=https://example.cypress.io/
@@ -20,4 +17,8 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    command: ["sh", "-c", "yarn && yarn test-ci"]
+      - nodemodules:/app/node_modules
+    command:
+      - "sh"
+      - "-c"
+      - "yarn && rm -rf test-results && mkdir -m 777 test-results && yarn test-ci"
