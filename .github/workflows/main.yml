@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build docker image
-        run: docker-compose build test-ci
-
       - name: Install packages
         run: yarn install
 
