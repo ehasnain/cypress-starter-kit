@@ -10,21 +10,22 @@
         "combine-junit-results": "./scripts/combine-junit-results.sh",
         "fix-lint": "./scripts/lint.sh --fix",
         "lint": "./scripts/lint.sh",
-        "pretest": "yarn clean-results",
+        "pretest": "yarn run clean-results",
         "test": "./scripts/test.sh",
         "test-ci": "./scripts/test-ci.sh",
         "test-local": "./scripts/test-local.sh",
         "test-watch": "./scripts/test-watch.sh"
     },
     "devDependencies": {
-        "@types/node": "^15.12.5",
-        "@typescript-eslint/eslint-plugin": "^4.28.1",
-        "@typescript-eslint/parser": "^4.28.1",
-        "cypress": "^7.6.0",
+        "@types/node": "^16",
+        "@typescript-eslint/eslint-plugin": "^5.10.1",
+        "@typescript-eslint/parser": "^5.10.1",
+        "cypress": "^9.3.1",
         "cypress-multi-reporters": "^1.5.0",
-        "eslint": "^7.29.0",
-        "junit-report-merger": "^2.2.2",
-        "mocha-junit-reporter": "^2.0.0",
-        "typescript": "^4.3.4"
+        "eslint": "^8.7.0",
+        "junit-report-merger": "^3.0.5",
+        "mocha": "^9.2.0",
+        "mocha-junit-reporter": "^2.0.2",
+        "typescript": "^4.5.5"
     }
 }

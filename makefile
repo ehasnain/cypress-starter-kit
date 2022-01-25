@@ -7,13 +7,13 @@ build:		## Build Docker image for cypress testing
 	@./scripts/build.sh
 
 lint:		## Run linter (eslint) on the 'src' folders
-	@yarn lint
+	@yarn run lint
 
 test:		## Run tests once on local machine without docker
-	@yarn test-local
+	@yarn run test-local
 
 test-watch:	## Start cypress tests in watch mode
-	@yarn test-watch
+	@yarn run test-watch
 
-test-ci:	## Run tests on a CI Environment (e.g. Jenkins, etc.) in a docker container
-	@docker-compose up --build test-ci && docker-compose rm -fsv test-ci
+test-ci: build	## Run tests on a CI Environment (e.g. Jenkins, etc.) in a docker container
+	@docker-compose up test-ci && docker-compose rm -fsv test-ci

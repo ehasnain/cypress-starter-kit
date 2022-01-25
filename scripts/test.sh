@@ -6,7 +6,7 @@ $(yarn bin)/cypress run $@
 EXIT_CODE=$?
 
 # run posttest script
-yarn combine-junit-results
+yarn run combine-junit-results
 
 # exit with cached exit code
 exit $EXIT_CODE
